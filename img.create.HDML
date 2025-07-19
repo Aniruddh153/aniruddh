@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiritual AI Art Generator | Create Custom Spiritual Artwork</title>
+    <meta name="description" content="Generate beautiful spiritual artwork with AI. Create custom images and videos of deities, sacred symbols, and meditation scenes with our easy-to-use tools.">
+    <meta name="keywords" content="AI art generator, spiritual art, deity images, meditation visuals, sacred art">
+    <meta property="og:title" content="Spiritual AI Art Generator">
+    <meta property="og:description" content="Create custom spiritual artwork with AI technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spiritual-art-generator.example.com">
+    <meta property="og:image" content="https://spiritual-art-generator.example.com/images/og-image.jpg">
+    <link rel="canonical" href="https://spiritual-art-generator.example.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-light: #f8f9fa;
+            --secondary-light: #e9ecef;
+            --accent-light: #a5d8ff;
+            --text-light: #495057;
+            --text-dark: #212529;
+            --primary-color: #748ffc;
+            --primary-dark: #5c7cfa;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --border-radius: 12px;
+            --background: var(--primary-light);
+            --foreground: var(--text-dark);
+            --card-bg: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #121212;
+                --foreground: #f8f9fa;
+                --card-bg: #1e1e1e;
+                --text-light: #adb5bd;
+                --text-dark: #f8f9fa;
+                --primary-light: #121212;
+                --secondary-light: #2d2d2d;
+            }
+        }
+
+        [data-theme="light"] {
+            --background: var(--primary-light);
+            --foreground: var(--text-dark);
+            --card-bg: white;
+            --text-light: #495057;
+            --text-dark: #212529;
+        }
+
+        [data-theme="dark"] {
+            --background: #121212;
+            --foreground: #f8f9fa;
+            --card-bg: #1e1e1e;
+            --text-light: #adb5bd;
+            --text-dark: #f8f9fa;
+            --primary-light: #121212;
+            --secondary-light: #2d2d2d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--foreground);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a:focus {
+            color: var(--primary-dark);
+            outline: none;
+        }
+
+        .join-link {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .join-link:hover, .join-link:focus {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'EB Garamond', serif;
+            color: var(--foreground);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hero section */
+        .light-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .light-hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        button, .light-button {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        button:hover, .light-button:hover,
+        button:focus, .light-button:focus {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            outline: none;
+        }
+
+        .light-button.outlined {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-dark);
+        }
+
+        .light-button.outlined:hover, .light-button.outlined:focus {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            aspect-ratio: 16/9;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .image-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Styles */
+        .alt-bg {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover, .gallery-item:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .watermarked {
+            position: relative;
+        }
+
+        .watermarked::after {
+            content: "tejas";
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            pointer-events: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .light-button.small {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Generator Modal Styles */
+        .generator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.95);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .generator-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .close-generator {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .close-generator:hover, .close-generator:focus {
+            color: var(--foreground);
+            outline: none;
+        }
+
+        .generator-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--secondary-light);
+        }
+
+        .generator-tab {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .generator-tab.active {
+            color: var(--primary-dark);
+        }
+
+        .generator-tab.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-dark);
+        }
+
+        .generator-content {
+            display: none;
+        }
+
+        .generator-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--secondary-light);
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            background-color: var(--card-bg);
+            color: var(--foreground);
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(116, 143, 252, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .generator-result {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .result-placeholder {
+            background-color: var(--primary-light);
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-content {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 3px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--card-bg);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .footer-logo span {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+        }
+
+        /* Preview Modal */
+        .preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 2000;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: 2rem auto;
+        }
+
+        .modal-content img, .modal-content video {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .modal-actions {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow);
+            z-index: 100;
+        }
+
+        /* Visually Hidden Utility Class */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .generator-container {
+                padding: 1rem;
+            }
+            
+            .generator-tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <i class="fas fa-om" aria-hidden="true"></i>
+                <h1>Spiritual Light</h1>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#generator" id="generator-link">AI Generator</a></li>
+                    <li><a href="#join" class="join-link">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home" aria-labelledby="home-heading">
+            <div class="light-hero">
+                <div class="hero-content">
+                    <h1 id="home-heading">Create Spiritual Art with AI</h1>
+                    <p class="subtitle">Transform your spiritual visions into beautiful images and videos with our easy-to-use tools</p>
+                    <div class="hero-buttons">
+                        <button id="open-generator" class="light-button" aria-label="Open AI Generator">
+                            <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> Try Generator
+                        </button>
+                        <a href="#gallery" class="light-button outlined">View Gallery</a>
+                    </div>
+                </div>
+                <div class="hero-image watermarked">
+                    <img src="https://source.unsplash.com/random/800x600/?spiritual,art" 
+                         alt="Sample AI-generated spiritual artwork showing a peaceful meditation scene" 
+                         loading="lazy"
+                         width="800"
+                         height="600">
+                    <div class="image-overlay">
+                        <p>AI-generated spiritual artwork with "tejas" watermark</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" aria-labelledby="gallery-heading">
+            <div class="light-section alt-bg">
+                <div class="section-header">
+                    <h2 id="gallery-heading">Spiritual Art Gallery</h2>
+                    <p class="section-subtitle">Community creations made with our tools</p>
+                </div>
+                <div class="gallery-container" role="list">
+                    <article class="gallery-item" role="listitem">
+                        <figure>
+                            <div class="watermarked">
+                                <img src="https://source.unsplash.com/random/600x400/?meditation" 
+                                     alt="Peaceful meditation scene with golden light" 
+                                     loading="lazy"
+                                     width="600"
+                                     height="400">
+                            </div>
+                            <figcaption>
+                                <h3>Meditation Bliss</h3>
+                                <p>Created with "peaceful meditation energy" prompt</p>
+                                <div class="gallery-actions">
+                                    <button class="light-button small preview-btn" 
+                                            data-src="https://source.unsplash.com/random/600x400/?meditation"
+                                            aria-label="Preview meditation image">
+                                        <i class="fas fa-expand" aria-hidden="true"></i> Preview
+                                    </button>
+                                    <a href="https://source.unsplash.com/random/600x400/?meditation" 
+                                       download="meditation-bliss-tejas.jpg" 
+                                       class="light-button outlined small">
+                                        <i class="fas fa-download" aria-hidden="true"></i> Download
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="gallery-item" role="listitem">
+                        <figure>
+                            <div class="watermarked video-container">
+                                <video autoplay loop muted playsinline aria-label="Cosmic energy animation">
+                                    <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <figcaption>
+                                <h3>Cosmic Energy</h3>
+                                <p>Animated visualization of spiritual light</p>
+                                <div class="gallery-actions">
+                                    <button class="light-button small preview-btn" 
+                                            data-src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
+                                            data-type="video"
+                                            aria-label="Preview cosmic energy video">
+                                        <i class="fas fa-expand" aria-hidden="true"></i> Preview
+                                    </button>
+                                    <a href="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" 
+                                       download="cosmic-energy-tejas.mp4" 
+                                       class="light-button outlined small">
+                                        <i class="fas fa-download" aria-hidden="true"></i> Download
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="generator" aria-labelledby="generator-heading">
+            <div class="section-header">
+                <h2 id="generator-heading">AI Spiritual Generator</h2>
+                <p class="section-subtitle">Create your own custom spiritual artwork</p>
+                <button id="open-generator2" class="light-button" aria-label="Open AI Generator">
+                    <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i> Launch Generator
+                </button>
+            </div>
+        </section>
+
+        <section id="join" aria-labelledby="join-heading">
+            <div class="light-section alt-bg">
+                <div class="section-header">
+                    <h2 id="join-heading">Join Our Community</h2>
+                    <p class="section-subtitle">Get updates and share your creations</p>
+                    <form class="join-form" aria-label="Join community form">
+                        <div class="form-group">
+                            <label for="join-email" class="visually-hidden">Email Address</label>
+                            <input type="email" id="join-email" placeholder="Your email address" class="form-control" required>
+                        </div>
+                        <button type="submit" class="light-button">
+                            <i class="fas fa-heart" aria-hidden="true"></i> Join Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-om" aria-hidden="true"></i>
+                <span>Spiritual Light</span>
+            </div>
+            <p class="footer-text">Create and share your spiritual visions</p>
+            <p class="disclaimer">All generated content includes 'tejas' watermark for attribution</p>
+        </div>
+    </footer>
+
+    <!-- Generator Modal -->
+    <div id="generator-modal" class="generator-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+        <div class="generator-container">
+            <h2 id="modal-heading" class="visually-hidden">AI Generator</h2>
+            <button class="close-generator" aria-label="Close generator dialog">
+                &times;
+            </button>
+            
+            <div class="generator-tabs" role="tablist">
+                <button class="generator-tab active" 
+                        role="tab" 
+                        aria-selected="true" 
+                        aria-controls="image-tab"
+                        id="image-tab-btn">
+                    Image Generator
+                </button>
+                <button class="generator-tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls="video-tab"
+                        id="video-tab-btn">
+                    Video Creator
+                </button>
+                <button class="generator-tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls="batch-tab"
+                        id="batch-tab-btn">
+                    Batch Process
+                </button>
+            </div>
+            
+            <!-- Image Generator Tab -->
+            <div id="image-tab" class="generator-content active" role="tabpanel" aria-labelledby="image-tab-btn">
+                <div class="form-group">
+                    <label for="image-prompt">Describe your spiritual vision</label>
+                    <textarea id="image-prompt" class="form-control" 
+                              placeholder="e.g., 'peaceful meditation scene at sunrise, digital art style'"
+                              aria-describedby="prompt-help"></textarea>
+                    <small id="prompt-help" class="visually-hidden">Be as descriptive as possible for best results</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="image-style">Art Style</label>
+                    <select id="image-style" class="form-control">
+                        <option value="digital">Digital Art</option>
+                        <option value="watercolor">Watercolor</option>
+                        <option value="oil">Oil Painting</option>
+                        <option value="minimal">Minimalist</option>
+                    </select>
+                </div>
+                
+                <button id="generate-image" class="light-button">
+                    <span class="spinner" aria-hidden="true"></span>
+                    <span id="generate-image-text">Generate Image</span>
+                </button>
+                
+                <div class="generator-result">
+                    <div class="result-placeholder" id="image-result">
+                        <p>Your generated image will appear here</p>
+                    </div>
+                    <div class="result-actions" id="image-actions" style="display:none;">
+                        <button id="download-image" class="light-button outlined">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download
+                        </button>
+                        <button id="use-for-video" class="light-button">
+                            <i class="fas fa-film" aria-hidden="true"></i> Create Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Creator Tab -->
+            <div id="video-tab" class="generator-content" role="tabpanel" aria-labelledby="video-tab-btn">
+                <div class="form-group">
+                    <label>Image Source</label>
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <button class="source-btn active" data-source="upload" aria-pressed="true">Upload</button>
+                        <button class="source-btn" data-source="generated" aria-pressed="false">Use Generated</button>
+                        <button class="source-btn" data-source="url" aria-pressed="false">From URL</button>
+                    </div>
+                    
+                    <div id="upload-source" class="source-content active">
+                        <label for="video-upload" class="visually-hidden">Upload image file</label>
+                        <input type="file" id="video-upload" class="form-control" accept="image/*">
+                    </div>
+                    
+                    <div id="generated-source" class="source-content">
+                        <label for="generated-select" class="visually-hidden">Select generated image</label>
+                        <select id="generated-select" class="form-control">
+                            <option value="">Select a previously generated image</option>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <div id="url-source" class="source-content">
+                        <label for="image-url" class="visually-hidden">Image URL</label>
+                        <input type="url" id="image-url" class="form-control" placeholder="https://example.com/image.jpg">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="video-style">Animation Style</label>
+                    <select id="video-style" class="form-control">
+                        <option value="pan">Gentle Pan</option>
+                        <option value="zoom">Sacred Zoom</option>
+                        <option value="particles">Divine Particles</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="video-duration">Duration: <span id="duration-value">5</span> seconds</label>
+                    <input type="range" id="video-duration" class="form-control" min="3" max="15" value="5" aria-valuetext="5 seconds">
+                </div>
+                
+                <button id="generate-video" class="light-button">
+                    <span class="spinner" aria-hidden="true"></span>
+                    <span id="generate-video-text">Create Video</span>
+                </button>
+                
+                <div class="generator-result">
+                    <div class="result-placeholder" id="video-result">
+                        <p>Your generated video will appear here</p>
+                    </div>
+                    <div class="result-actions" id="video-actions" style="display:none;">
+                        <button id="download-video" class="light-button outlined">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download
+                        </button>
+                        <button id="share-video" class="light-button">
+                            <i class="fas fa-share-alt" aria-hidden="true"></i> Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Batch Process Tab -->
+            <div id="batch-tab" class="generator-content" role="tabpanel" aria-labelledby="batch-tab-btn">
+                <div class="form-group">
+                    <label for="batch-prompts">Enter multiple prompts (one per line)</label>
+                    <textarea id="batch-prompts" class="form-control" rows="5" 
+                              placeholder="peaceful meditation scene\nspiritual energy visualization\nsacred temple at sunrise"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="batch-style">Art Style</label>
+                    <select id="batch-style" class="form-control">
+                        <option value="digital">Digital Art</option>
+                        <option value="watercolor">Watercolor</option>
+                    </select>
+                </div>
+                
+                <button id="generate-batch" class="light-button">
+                    <span class="spinner" aria-hidden="true"></span>
+                    <span id="generate-batch-text">Generate Batch</span>
+                </button>
+                
+                <div class="generator-result">
+                    <div id="batch-results" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                        <!-- Batch results will appear here -->
+                    </div>
+                    <div class="result-actions" id="batch-actions" style="display:none;">
+                        <button id="download-batch" class="light-button outlined">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download All
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="preview-modal">
+        <!-- Content will be inserted by JavaScript -->
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner" aria-hidden="true"></div>
+            <p id="loading-text">Generating your artwork...</p>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        // API Integration
+        const API_BASE_URL = 'https://api.spiritual-art.example.com/v1';
+        
+        /**
+         * Generate image from prompt
+         * @param {string} prompt - Description of desired image
+         * @param {string} style - Art style to use
+         * @returns {Promise<{imageUrl: string, generationId: string}>}
+         */
+        async function generateImage(prompt, style) {
+            showLoading('Creating your spiritual artwork...');
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/generate/image`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify({ 
+                        prompt, 
+                        style,
+                        watermark: "tejas",
+                        aspectRatio: "16:9"
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Generation failed:', error);
+                showError('Failed to generate image. Please try again.');
+                throw error;
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        /**
+         * Generate video from image
+         * @param {string} imageUrl - Source image URL
+         * @param {string} style - Animation style
+         * @param {number} duration - Duration in seconds
+         * @returns {Promise<{videoUrl: string, generationId: string}>}
+         */
+        async function generateVideo(imageUrl, style, duration) {
+            showLoading('Animating your spiritual artwork...');
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/generate/video`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify({ 
+                        imageUrl,
+                        style,
+                        duration,
+                        watermark: "tejas"
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Video creation failed:', error);
+                showError('Failed to create video. Please try again.');
+                throw error;
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        /**
+         * Generate multiple images in batch
+         * @param {string[]} prompts - Array of prompts
+         * @param {string} style - Art style to use
+         * @returns {Promise<Array<{imageUrl: string, prompt: string, generationId: string}>>}
+         */
+        async function generateBatch(prompts, style) {
+            showLoading(`Generating ${prompts.length} artworks...`);
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/generate/batch`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${getAuthToken()}`
+                    },
+                    body: JSON.stringify({ 
+                        prompts,
+                        style,
+                        watermark: "tejas"
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                return data.results;
+            } catch (error) {
+                console.error('Batch generation failed:', error);
+                showError('Failed to generate batch. Please try again.');
+                throw error;
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Storage for generated images
+        const STORAGE_KEY = 'spiritualArtGenerator';
+        
+        /**
+         * Save generated image to local storage
+         * @param {object} generation - Generation result
+         */
+        function saveGeneration(generation) {
+            const history = getGenerationHistory();
+            history.unshift({
+                ...generation,
+                timestamp: Date.now()
+            });
+            
+            // Keep only the last 20 generations
+            const updatedHistory = history.slice(0, 20);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedHistory));
+            updateGeneratedImageList();
+        }
+        
+        /**
+         * Get generation history from local storage
+         * @returns {Array}
+         */
+        function getGenerationHistory() {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) || [];
+        }
+        
+        /**
+         * Update the dropdown with generated images
+         */
+        function updateGeneratedImageList() {
+            const history = getGenerationHistory();
+            const select = document.getElementById('generated-select');
+            
+            // Clear existing options except the first one
+            while (select.options.length > 1) {
+                select.remove(1);
+            }
+            
+            // Add new options
+            history.forEach((item, index) => {
+                const option = document.createElement('option');
+                option.value = item.imageUrl || item.videoUrl;
+                option.textContent = `Generated: ${item.prompt.substring(0, 30)}${item.prompt.length > 30 ? '...' : ''}`;
+                option.dataset.generationId = item.generationId;
+                select.appendChild(option);
+            });
+        }
+        
+        // DRY Download Function
+        function downloadFile(url, filename) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Loading State Management
+        function showLoading(message) {
+            const overlay = document.getElementById('loading-overlay');
+            const text = document.getElementById('loading-text');
+            
+            text.textContent = message;
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideLoading() {
+            const overlay = document.getElementById('loading-overlay');
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showError(message) {
+            // In a real implementation, you might show a toast or alert
+            alert(message);
+        }
+        
+        // Authentication (simplified for example)
+        function getAuthToken() {
+            // In a real app, this would come from your auth system
+            return localStorage.getItem('authToken') || 'demo-token';
+        }
+        
+        // Dark Mode Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Set initial theme
+        if (prefersDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
+                localStorage.setItem('themePreference', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+                localStorage.setItem('themePreference', 'dark');
+            }
+        });
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('themePreference');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.innerHTML = savedTheme === 'dark' 
+                ? '<i class="fas fa-sun" aria-hidden="true"></i>' 
+                : '<i class="fas fa-moon" aria-hidden="true"></i>';
+        }
+        
+        // Modal Accessibility
+        const modal = document.getElementById('generator-modal');
+        const openButtons = document.querySelectorAll('#open-generator, #open-generator2');
+        const closeButton = document.querySelector('.close-generator');
+        const generatorLink = document.getElementById('generator-link');
+        
+        let lastFocusedElement = null;
+        
+        function openModal() {
+            lastFocusedElement = document.activeElement;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            closeButton.focus();
+            
+            // Trap focus inside modal
+            modal.addEventListener('keydown', trapTabKey);
+        }
+        
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+            modal.removeEventListener('keydown', trapTabKey);
+        }
+        
+        function trapTabKey(e) {
+            if (e.key === 'Tab') {
+                const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (e.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        lastElement.focus();
+                        e.preventDefault();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        firstElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+            
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        }
+        
+        openButtons.forEach(btn => btn.addEventListener('click', openModal));
+        closeButton.addEventListener('click', closeModal);
+        generatorLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+        
+        // Tab Switching
+        function switchTab(tabId) {
+            // Update tab buttons
+            document.querySelectorAll('.generator-tab').forEach(tab => {
+                const isActive = tab.getAttribute('data-tab') === tabId;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive);
+            });
+            
+            // Update tab content
+            document.querySelectorAll('.generator-content').forEach(content => {
+                content.classList.toggle('active', content.id === `${tabId}-tab`);
+            });
+        }
+        
+        document.querySelectorAll('.generator-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                switchTab(tabId);
+            });
+        });
+        
+        // Source Switching
+        document.querySelectorAll('.source-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sourceId = btn.getAttribute('data-source');
+                
+                // Update button states
+                document.querySelectorAll('.source-btn').forEach(b => {
+                    const isActive = b === btn;
+                    b.classList.toggle('active', isActive);
+                    b.setAttribute('aria-pressed', isActive);
+                });
+                
+                // Update content visibility
+                document.querySelectorAll('.source-content').forEach(content => {
+                    content.classList.toggle('active', content.id === `${sourceId}-source`);
+                });
+            });
+        });
+        
+        // Image Generation
+        document.getElementById('generate-image').addEventListener('click', async function() {
+            const button = this;
+            const textSpan = document.getElementById('generate-image-text');
+            const originalText = textSpan.textContent;
+            
+            button.disabled = true;
+            textSpan.textContent = 'Generating...';
+            
+            try {
+                const prompt = document.getElementById('image-prompt').value;
+                const style = document.getElementById('image-style').value;
+                
+                if (!prompt.trim()) {
+                    alert('Please enter a description for your image');
+                    return;
+                }
+                
+                const result = await generateImage(prompt, style);
+                
+                // Display result
+                const resultDiv = document.getElementById('image-result');
+                resultDiv.innerHTML = `
+                    <img src="${result.imageUrl}" 
+                         alt="Generated spiritual image: ${prompt}" 
+                         class="watermarked"
+                         loading="lazy">
+                    <p>"${prompt}" (${style} style)</p>
+                `;
+                
+                // Save to storage
+                saveGeneration({
+                    imageUrl: result.imageUrl,
+                    prompt,
+                    style,
+                    generationId: result.generationId
+                });
+                
+                // Set up download
+                document.getElementById('download-image').onclick = () => {
+                    downloadFile(result.imageUrl, `spiritual-${Date.now()}-tejas.jpg`);
+                };
+                
+                document.getElementById('image-actions').style.display = 'flex';
+            } catch (error) {
+                console.error('Generation failed:', error);
+            } finally {
+                button.disabled = false;
+                textSpan.textContent = originalText;
+            }
+        });
+        
+        // Video Generation
+        document.getElementById('generate-video').addEventListener('click', async function() {
+            const button = this;
+            const textSpan = document.getElementById('generate-video-text');
+            const originalText = textSpan.textContent;
+            
+            button.disabled = true;
+            textSpan.textContent = 'Creating...';
+            
+            try {
+                const style = document.getElementById('video-style').value;
+                const duration = document.getElementById('video-duration').value;
+                let imageSrc;
+                
+                // Get image source based on selected tab
+                const activeSource = document.querySelector('.source-btn.active').getAttribute('data-source');
+                
+                if (activeSource === 'upload') {
+                    const file = document.getElementById('video-upload').files[0];
+                    if (!file) {
+                        alert('Please upload an image first');
+                        return;
+                    }
+                    imageSrc = URL.createObjectURL(file);
+                } else if (activeSource === 'generated') {
+                    const select = document.getElementById('generated-select');
+                    if (select.selectedIndex <= 0) {
+                        alert('Please select a generated image');
+                        return;
+                    }
+                    imageSrc = select.value;
+                } else {
+                    const url = document.getElementById('image-url').value;
+                    if (!url) {
+                        alert('Please enter an image URL');
+                        return;
+                    }
+                    imageSrc = url;
+                }
+                
+                const result = await generateVideo(imageSrc, style, duration);
+                
+                // Display result
+                const resultDiv = document.getElementById('video-result');
+                resultDiv.innerHTML = `
+                    <video controls autoplay loop class="watermarked" aria-label="Generated spiritual animation">
+                        <source src="${result.videoUrl}" type="video/mp4">
+                    </video>
+                    <p>${style} animation (${duration}s)</p>
+                `;
+                
+                // Set up download
+                document.getElementById('download-video').onclick = () => {
+                    downloadFile(result.videoUrl, `spiritual-video-${Date.now()}-tejas.mp4`);
+                };
+                
+                document.getElementById('video-actions').style.display = 'flex';
+            } catch (error) {
+                console.error('Video creation failed:', error);
+            } finally {
+                button.disabled = false;
+                textSpan.textContent = originalText;
+            }
+        });
+        
+        // Batch Processing
+        document.getElementById('generate-batch').addEventListener('click', async function() {
+            const button = this;
+            const textSpan = document.getElementById('generate-batch-text');
+            const originalText = textSpan.textContent;
+            
+            button.disabled = true;
+            textSpan.textContent = 'Processing...';
+            const resultsDiv = document.getElementById('batch-results');
+            resultsDiv.innerHTML = '';
+            
+            try {
+                const prompts = document.getElementById('batch-prompts').value
+                    .split('\n')
+                    .map(p => p.trim())
+                    .filter(p => p);
+                
+                const style = document.getElementById('batch-style').value;
+                
+                if (prompts.length === 0) {
+                    alert('Please enter at least one prompt');
+                    return;
+                }
+                
+                const results = await generateBatch(prompts, style);
+                
+                // Display results
+                results.forEach((result, index) => {
+                    const card = document.createElement('div');
+                    card.style.background = 'var(--card-bg)';
+                    card.style.padding = '1rem';
+                    card.style.borderRadius = 'var(--border-radius)';
+                    card.style.boxShadow = 'var(--shadow)';
+                    
+                    card.innerHTML = `
+                        <div style="position:relative;height:150px;overflow:hidden;">
+                            <img src="${result.imageUrl}" 
+                                 alt="Generated: ${result.prompt.substring(0, 30)}" 
+                                 style="width:100%;height:100%;object-fit:cover;" 
+                                 class="watermarked"
+                                 loading="lazy">
+                        </div>
+                        <p style="margin-top:0.5rem;font-size:0.9rem;">
+                            ${result.prompt.substring(0, 30)}${result.prompt.length > 30 ? '...' : ''}
+                        </p>
+                        <button class="download-item light-button small" 
+                                style="width:100%;padding:0.3rem;font-size:0.8rem;"
+                                aria-label="Download ${result.prompt.substring(0, 20)}">
+                            <i class="fas fa-download" aria-hidden="true"></i> Download
+                        </button>
+                    `;
+                    
+                    card.querySelector('.download-item').onclick = (e) => {
+                        e.preventDefault();
+                        downloadFile(result.imageUrl, `spiritual-${result.prompt.substring(0, 20)}-tejas.jpg`);
+                    };
+                    
+                    resultsDiv.appendChild(card);
+                    
+                    // Save to storage
+                    saveGeneration({
+                        imageUrl: result.imageUrl,
+                        prompt: result.prompt,
+                        style,
+                        generationId: result.generationId
+                    });
+                });
+                
+                document.getElementById('batch-actions').style.display = 'flex';
+                
+            } catch (error) {
+                console.error('Batch processing failed:', error);
+            } finally {
+                button.disabled = false;
+                textSpan.textContent = originalText;
+            }
+        });
+        
+        // Use image for video
+        document.getElementById('use-for-video').addEventListener('click', function() {
+            // Switch to video tab
+            switchTab('video');
+            // Select generated source
+            document.querySelector('.source-btn[data-source="generated"]').click();
+        });
+        
+        // Update duration display
+        document.getElementById('video-duration').addEventListener('input', function() {
+            document.getElementById('duration-value').textContent = this.value;
+            this.setAttribute('aria-valuetext', `${this.value} seconds`);
+        });
+        
+        // Gallery Preview
+        document.querySelectorAll('.preview-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const src = this.getAttribute('data-src');
+                const type = this.getAttribute('data-type') || 'image';
+                const modal = document.getElementById('preview-modal');
+                const modalContent = document.createElement('div');
+                modalContent.className = 'modal-content';
+                
+                if (type === 'video') {
+                    modalContent.innerHTML = `
+                        <button class="close-modal" aria-label="Close preview">
+                            &times;
+                        </button>
+                        <video controls autoplay class="watermarked" aria-label="Preview of spiritual animation">
+                            <source src="${src}" type="video/mp4">
+                        </video>
+                        <div class="modal-actions">
+                            <button class="light-button download-preview">
+                                <i class="fas fa-download" aria-hidden="true"></i> Download
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    modalContent.innerHTML = `
+                        <button class="close-modal" aria-label="Close preview">
+                            &times;
+                        </button>
+                        <img src="${src}" 
+                             class="watermarked" 
+                             alt="Preview of spiritual artwork"
+                             loading="lazy">
+                        <div class="modal-actions">
+                            <button class="light-button download-preview">
+                                <i class="fas fa-download" aria-hidden="true"></i> Download
+                            </button>
+                        </div>
+                    `;
+                }
+                
+                modal.innerHTML = '';
+                modal.appendChild(modalContent);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Set up download
+                modalContent.querySelector('.download-preview').onclick = () => {
+                    const filename = type === 'video' 
+                        ? `spiritual-preview-${Date.now()}-tejas.mp4` 
+                        : `spiritual-preview-${Date.now()}-tejas.jpg`;
+                    downloadFile(src, filename);
+                };
+                
+                // Close modal
+                modalContent.querySelector('.close-modal').addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Focus first interactive element
+                modalContent.querySelector('button').focus();
+            });
+        });
+        
+        // Close preview modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('preview-modal')) {
+                document.getElementById('preview-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Initialize generated images list
+        updateGeneratedImageList();
+        
+        // Form submission
+        document.querySelector('.join-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('join-email').value;
+            
+            if (!email) {
+                alert('Please enter your email address');
+                return;
+            }
+            
+            try {
+                // In a real implementation, you would send this to your backend
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for joining our community!');
+                    document.getElementById('join-email').value = '';
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to subscribe. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
