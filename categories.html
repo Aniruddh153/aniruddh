@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Categories | AI Knowledge & GK Hub</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our comprehensive knowledge categories covering science, history, geography, technology, and competitive exams at AI Knowledge & GK Hub.">
+    <meta name="keywords" content="knowledge categories, science questions, history questions, geography questions, technology questions, competitive exam preparation">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Knowledge Categories | AI Knowledge & GK Hub">
+    <meta property="og:description" content="Explore our comprehensive knowledge categories covering science, history, geography, technology, and competitive exams at AI Knowledge & GK Hub.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiknowledgehub.com/categories">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-styles">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Knowledge Categories | AI Knowledge & GK Hub",
+        "description": "Explore our comprehensive knowledge categories covering science, history, geography, technology, and competitive exams at AI Knowledge & GK Hub.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI Knowledge & GK Hub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "images/logo.svg"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="AI Knowledge & GK Hub Logo" class="logo-img">
+                        <span class="logo-text">AI Knowledge Hub</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html" class="active">Categories</a></li>
+                        <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="font-size-toggle" aria-label="Adjust font size">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                    <button id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="language-selector">
+                        <button class="language-toggle" aria-label="Change language">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en" class="active">English</a>
+                            <a href="#" data-lang="hi">हिंदी</a>
+                            <a href="#" data-lang="es">Español</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Knowledge Categories</h1>
+                <p>Explore our comprehensive collection of knowledge categories designed to help you master any subject</p>
+            </div>
+        </section>
+        
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <form id="search-form" class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Search any question or topic..." aria-label="Search">
+                        <div id="search-suggestions" class="search-suggestions"></div>
+                    </div>
+                    <button type="button" id="voice-search" aria-label="Search by voice">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button type="submit" id="search-button" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Categories Grid -->
+        <section class="categories-grid-section">
+            <div class="container">
+                <div class="categories-grid">
+                    <!-- Science Category -->
+                    <div class="category-card" id="science">
+                        <div class="category-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h2>Science</h2>
+                        <p>Explore the wonders of physics, chemistry, biology, astronomy, and more</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">Physics</a>
+                            <a href="#" class="subcategory-tag">Chemistry</a>
+                            <a href="#" class="subcategory-tag">Biology</a>
+                            <a href="#" class="subcategory-tag">Astronomy</a>
+                            <a href="#" class="subcategory-tag">Earth Science</a>
+                        </div>
+                        <a href="science.html" class="btn-primary">Explore Science</a>
+                    </div>
+                    
+                    <!-- History Category -->
+                    <div class="category-card" id="history">
+                        <div class="category-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h2>History</h2>
+                        <p>Discover world history, important events, civilizations, and historical figures</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">World History</a>
+                            <a href="#" class="subcategory-tag">Ancient Civilizations</a>
+                            <a href="#" class="subcategory-tag">Modern History</a>
+                            <a href="#" class="subcategory-tag">Wars & Conflicts</a>
+                            <a href="#" class="subcategory-tag">Historical Figures</a>
+                        </div>
+                        <a href="history.html" class="btn-primary">Explore History</a>
+                    </div>
+                    
+                    <!-- Geography Category -->
+                    <div class="category-card" id="geography">
+                        <div class="category-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h2>Geography</h2>
+                        <p>Learn about countries, physical features, climate, populations, and more</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">Physical Geography</a>
+                            <a href="#" class="subcategory-tag">Human Geography</a>
+                            <a href="#" class="subcategory-tag">World Countries</a>
+                            <a href="#" class="subcategory-tag">Climate & Weather</a>
+                            <a href="#" class="subcategory-tag">Natural Resources</a>
+                        </div>
+                        <a href="geography.html" class="btn-primary">Explore Geography</a>
+                    </div>
+                    
+                    <!-- Technology Category -->
+                    <div class="category-card" id="technology">
+                        <div class="category-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h2>Technology</h2>
+                        <p>Stay updated with computer science, AI, robotics, and technological innovations</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">Computer Science</a>
+                            <a href="#" class="subcategory-tag">Artificial Intelligence</a>
+                            <a href="#" class="subcategory-tag">Robotics</a>
+                            <a href="#" class="subcategory-tag">Internet & Web</a>
+                            <a href="#" class="subcategory-tag">Emerging Tech</a>
+                        </div>
+                        <a href="technology.html" class="btn-primary">Explore Technology</a>
+                    </div>
+                    
+                    <!-- Competitive Exams Category -->
+                    <div class="category-card" id="competitive">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2>Competitive Exams</h2>
+                        <p>Prepare for UPSC, SSC, NEET, JEE, IAS, and other competitive examinations</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">UPSC</a>
+                            <a href="#" class="subcategory-tag">SSC</a>
+                            <a href="#" class="subcategory-tag">NEET</a>
+                            <a href="#" class="subcategory-tag">JEE</a>
+                            <a href="#" class="subcategory-tag">Banking Exams</a>
+                        </div>
+                        <a href="competitive-exams.html" class="btn-primary">Explore Competitive Exams</a>
+                    </div>
+                    
+                    <!-- Current Affairs Category -->
+                    <div class="category-card" id="current-affairs">
+                        <div class="category-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h2>Current Affairs</h2>
+                        <p>Stay updated with the latest news, events, and developments around the world</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">National</a>
+                            <a href="#" class="subcategory-tag">International</a>
+                            <a href="#" class="subcategory-tag">Politics</a>
+                            <a href="#" class="subcategory-tag">Economy</a>
+                            <a href="#" class="subcategory-tag">Sports</a>
+                        </div>
+                        <a href="current-affairs.html" class="btn-primary">Explore Current Affairs</a>
+                    </div>
+                    
+                    <!-- Mathematics Category -->
+                    <div class="category-card" id="mathematics">
+                        <div class="category-icon">
+                            <i class="fas fa-square-root-alt"></i>
+                        </div>
+                        <h2>Mathematics</h2>
+                        <p>Master arithmetic, algebra, geometry, calculus, statistics, and more</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">Algebra</a>
+                            <a href="#" class="subcategory-tag">Geometry</a>
+                            <a href="#" class="subcategory-tag">Calculus</a>
+                            <a href="#" class="subcategory-tag">Statistics</a>
+                            <a href="#" class="subcategory-tag">Number Theory</a>
+                        </div>
+                        <a href="mathematics.html" class="btn-primary">Explore Mathematics</a>
+                    </div>
+                    
+                    <!-- Literature Category -->
+                    <div class="category-card" id="literature">
+                        <div class="category-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h2>Literature</h2>
+                        <p>Explore world literature, authors, literary works, poetry, and more</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">World Literature</a>
+                            <a href="#" class="subcategory-tag">Famous Authors</a>
+                            <a href="#" class="subcategory-tag">Poetry</a>
+                            <a href="#" class="subcategory-tag">Literary Movements</a>
+                            <a href="#" class="subcategory-tag">Literary Analysis</a>
+                        </div>
+                        <a href="literature.html" class="btn-primary">Explore Literature</a>
+                    </div>
+                    
+                    <!-- General Knowledge Category -->
+                    <div class="category-card" id="general-knowledge">
+                        <div class="category-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2>General Knowledge</h2>
+                        <p>Broaden your horizons with miscellaneous knowledge from various fields</p>
+                        <div class="subcategories">
+                            <a href="#" class="subcategory-tag">Trivia</a>
+                            <a href="#" class="subcategory-tag">Famous Personalities</a>
+                            <a href="#" class="subcategory-tag">Awards & Honors</a>
+                            <a href="#" class="subcategory-tag">World Records</a>
+                            <a href="#" class="subcategory-tag">Interesting Facts</a>
+                        </div>
+                        <a href="general-knowledge.html" class="btn-primary">Explore General Knowledge</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular Topics Section -->
+        <section class="popular-topics-section">
+            <div class="container">
+                <h2>Popular Topics</h2>
+                <div class="popular-topics">
+                    <a href="#" class="topic-tag">Quantum Physics</a>
+                    <a href="#" class="topic-tag">World War II</a>
+                    <a href="#" class="topic-tag">Climate Change</a>
+                    <a href="#" class="topic-tag">Artificial Intelligence</a>
+                    <a href="#" class="topic-tag">Human Anatomy</a>
+                    <a href="#" class="topic-tag">Solar System</a>
+                    <a href="#" class="topic-tag">Indian History</a>
+                    <a href="#" class="topic-tag">Blockchain Technology</a>
+                    <a href="#" class="topic-tag">Periodic Table</a>
+                    <a href="#" class="topic-tag">World Geography</a>
+                    <a href="#" class="topic-tag">Machine Learning</a>
+                    <a href="#" class="topic-tag">DNA Structure</a>
+                    <a href="#" class="topic-tag">Ancient Civilizations</a>
+                    <a href="#" class="topic-tag">Space Exploration</a>
+                    <a href="#" class="topic-tag">Economic Systems</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ad Container -->
+        <div class="ad-container">
+            <div class="container">
+                <div class="ad-wrapper">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-content">
+                        <!-- Ad content will be inserted here -->
+                        <div class="ad-placeholder">
+                            <span>Ad Space</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Knowledge & GK Hub Logo">
+                    <p>Your ultimate resource for knowledge and competitive exam preparation</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#science">Science</a></li>
+                            <li><a href="#history">History</a></li>
+                            <li><a href="#geography">Geography</a></li>
+                            <li><a href="#technology">Technology</a></li>
+                            <li><a href="#competitive">Competitive Exams</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="resources.html#study-materials">Study Materials</a></li>
+                            <li><a href="resources.html#practice-tests">Practice Tests</a></li>
+                            <li><a href="resources.html#downloads">Downloads</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get the latest updates, tips, and exclusive content</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Your email address" required aria-label="Email for newsletter">
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; <span id="current-year"></span> AI Knowledge & GK Hub. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Accessibility Announcer (for screen readers) -->
+    <div id="accessibility-announcer" class="sr-only" aria-live="polite"></div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/voice-assistant.js"></script>
+    <script src="js/language-switcher.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

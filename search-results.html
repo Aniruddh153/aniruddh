@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | AI Knowledge & GK Hub</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find answers to all your questions with AI Knowledge & GK Hub - the ultimate resource for general knowledge, science, and competitive exam preparation.">
+    <meta name="keywords" content="knowledge hub, general knowledge, GK, science questions, competitive exams, AI learning">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Search Results | AI Knowledge & GK Hub">
+    <meta property="og:description" content="Find answers to all your questions with AI Knowledge & GK Hub - the ultimate resource for general knowledge, science, and competitive exam preparation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiknowledgehub.com/search-results">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-styles">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Search Results | AI Knowledge & GK Hub",
+        "description": "Find answers to all your questions with AI Knowledge & GK Hub - the ultimate resource for general knowledge, science, and competitive exam preparation.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI Knowledge & GK Hub",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "images/logo.svg"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.svg" alt="AI Knowledge & GK Hub Logo" class="logo-img">
+                        <span class="logo-text">AI Knowledge Hub</span>
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button id="font-size-toggle" aria-label="Adjust font size">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                    <button id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="language-selector">
+                        <button class="language-toggle" aria-label="Change language">
+                            <i class="fas fa-globe"></i>
+                            <span>EN</span>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" data-lang="en" class="active">English</a>
+                            <a href="#" data-lang="hi">हिंदी</a>
+                            <a href="#" data-lang="es">Español</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <form id="search-form" class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Search any question or topic..." aria-label="Search">
+                        <div id="search-suggestions" class="search-suggestions"></div>
+                    </div>
+                    <button type="button" id="voice-search" aria-label="Search by voice">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button type="submit" id="search-button" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Search Results Section -->
+        <section class="search-results-section">
+            <div class="container">
+                <div class="search-results-header">
+                    <h1>Search Results for: <span id="search-query"></span></h1>
+                    <div class="search-filters">
+                        <div class="filter-group">
+                            <label for="category-filter">Category:</label>
+                            <select id="category-filter">
+                                <option value="all">All Categories</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                                <option value="geography">Geography</option>
+                                <option value="technology">Technology</option>
+                                <option value="competitive">Competitive Exams</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="difficulty-filter">Difficulty:</label>
+                            <select id="difficulty-filter">
+                                <option value="all">All Levels</option>
+                                <option value="basic">Basic</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="search-results" class="search-results-container">
+                    <!-- Results will be populated here by JavaScript -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading results...</span>
+                    </div>
+                </div>
+                
+                <div class="search-pagination">
+                    <button id="prev-page" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="page-numbers">
+                        <span class="current-page">1</span> of <span class="total-pages">1</span>
+                    </div>
+                    <button id="next-page" disabled>
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Related Searches Section -->
+        <section class="related-searches-section">
+            <div class="container">
+                <h2>Related Searches</h2>
+                <div class="related-searches" id="related-searches">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ad Container -->
+        <div class="ad-container">
+            <div class="container">
+                <div class="ad-wrapper">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-content">
+                        <!-- Ad content will be inserted here -->
+                        <div class="ad-placeholder">
+                            <span>Ad Space</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Answer Modal -->
+    <div id="answer-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-content"></div>
+                <div class="modal-actions">
+                    <button id="speak-answer" class="btn-secondary">
+                        <i class="fas fa-volume-up"></i> Listen
+                    </button>
+                    <button id="download-answer" class="btn-secondary">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button id="share-answer" class="btn-secondary">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Knowledge & GK Hub Logo">
+                    <p>Your ultimate resource for knowledge and competitive exam preparation</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="categories.html#science">Science</a></li>
+                            <li><a href="categories.html#history">History</a></li>
+                            <li><a href="categories.html#geography">Geography</a></li>
+                            <li><a href="categories.html#technology">Technology</a></li>
+                            <li><a href="categories.html#competitive">Competitive Exams</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="resources.html#study-materials">Study Materials</a></li>
+                            <li><a href="resources.html#practice-tests">Practice Tests</a></li>
+                            <li><a href="resources.html#downloads">Downloads</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get the latest updates, tips, and exclusive content</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Your email address" required aria-label="Email for newsletter">
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; <span id="current-year"></span> AI Knowledge & GK Hub. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Accessibility Announcer (for screen readers) -->
+    <div id="accessibility-announcer" class="sr-only" aria-live="polite"></div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/search-results.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/voice-assistant.js"></script>
+    <script src="js/language-switcher.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

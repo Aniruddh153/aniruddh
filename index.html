@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered knowledge hub for global General Knowledge, science questions, and competitive exam preparation">
+    <meta name="keywords" content="AI knowledge, general knowledge, science questions, competitive exams, UPSC, SSC, NEET, JEE, IAS">
+    <title>KnowledgeAI Hub - Your Ultimate AI-Powered Knowledge Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="theme-stylesheet" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Schema markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "KnowledgeAI Hub",
+      "url": "https://knowledgeaihub.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://knowledgeaihub.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "AI-powered knowledge hub for global General Knowledge, science questions, and competitive exam preparation"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="KnowledgeAI Hub Logo">
+                <h1>KnowledgeAI Hub</h1>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="accessibility-controls">
+                        <button id="font-increase" aria-label="Increase font size">
+                            <i class="fas fa-text-height"></i>+
+                        </button>
+                        <button id="font-decrease" aria-label="Decrease font size">
+                            <i class="fas fa-text-height"></i>-
+                        </button>
+                    </div>
+                    <div class="language-selector">
+                        <select id="language-select">
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="es">Spanish</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Your Ultimate AI Knowledge Assistant</h2>
+                <p>Access world-class knowledge, competitive exam questions, and in-depth explanations instantly</p>
+                <div class="search-container">
+                    <form id="search-form">
+                        <div class="search-input-container">
+                            <input type="text" id="search-input" placeholder="Search any topic, question, or subject..." autocomplete="off">
+                            <button type="button" id="voice-search" aria-label="Search by voice">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                        <button type="submit" id="search-button">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </form>
+                    <div id="search-suggestions" class="search-suggestions"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Explore Knowledge Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>World General Knowledge</h3>
+                    <p>Explore facts about countries, cultures, history, and global affairs</p>
+                    <a href="categories/world-gk.html" class="btn-category">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science</h3>
+                    <p>Discover physics, chemistry, biology, astronomy, and more</p>
+                    <a href="categories/science.html" class="btn-category">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Competitive Exams</h3>
+                    <p>Practice with UPSC, SSC, NEET, JEE, IAS questions and more</p>
+                    <a href="categories/competitive-exams.html" class="btn-category">Explore</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Current Affairs</h3>
+                    <p>Stay updated with the latest events and developments worldwide</p>
+                    <a href="categories/current-affairs.html" class="btn-category">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Ranking Questions Section -->
+    <section class="daily-ranking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Today's Top Ranking Questions</h2>
+                <a href="daily-ranking.html" class="view-all">View All</a>
+            </div>
+            <div class="question-cards">
+                <!-- Question cards will be dynamically loaded here -->
+                <div class="question-card">
+                    <div class="question-meta">
+                        <span class="question-category">Physics</span>
+                        <span class="question-difficulty">Advanced</span>
+                    </div>
+                    <h3>What is the significance of Heisenberg's Uncertainty Principle in quantum mechanics?</h3>
+                    <div class="question-actions">
+                        <button class="btn-view-answer">View Answer</button>
+                        <button class="btn-play-audio" aria-label="Listen to answer">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="btn-save" aria-label="Save question">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="question-card">
+                    <div class="question-meta">
+                        <span class="question-category">World History</span>
+                        <span class="question-difficulty">Intermediate</span>
+                    </div>
+                    <h3>What were the main causes that led to the French Revolution of 1789?</h3>
+                    <div class="question-actions">
+                        <button class="btn-view-answer">View Answer</button>
+                        <button class="btn-play-audio" aria-label="Listen to answer">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="btn-save" aria-label="Save question">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="question-card">
+                    <div class="question-meta">
+                        <span class="question-category">Biology</span>
+                        <span class="question-difficulty">Advanced</span>
+                    </div>
+                    <h3>Explain the process of CRISPR-Cas9 gene editing and its potential applications</h3>
+                    <div class="question-actions">
+                        <button class="btn-view-answer">View Answer</button>
+                        <button class="btn-play-audio" aria-label="Listen to answer">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="btn-save" aria-label="Save question">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Search</h3>
+                    <p>Get instant, accurate answers to any question with our advanced AI technology</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Voice Assistant</h3>
+                    <p>Listen to answers with our text-to-speech technology for hands-free learning</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h3>Downloadable Content</h3>
+                    <p>Save questions, notes, and topic PDFs for offline study sessions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-universal-access"></i>
+                    </div>
+                    <h3>Accessibility Features</h3>
+                    <p>Dark mode, font resizing, and text-to-speech for comfortable learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Daily Knowledge</h2>
+                <p>Subscribe to receive daily top-ranking questions and knowledge updates</p>
+                <form id="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="KnowledgeAI Hub Logo">
+                    <h2>KnowledgeAI Hub</h2>
+                    <p>Your ultimate AI-powered knowledge assistant</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="categories.html">Categories</a></li>
+                            <li><a href="daily-ranking.html">Daily Ranking</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="categories/world-gk.html">World GK</a></li>
+                            <li><a href="categories/science.html">Science</a></li>
+                            <li><a href="categories/competitive-exams.html">Competitive Exams</a></li>
+                            <li><a href="categories/current-affairs.html">Current Affairs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="resources/study-materials.html">Study Materials</a></li>
+                            <li><a href="resources/practice-tests.html">Practice Tests</a></li>
+                            <li><a href="resources/downloads.html">Downloads</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 KnowledgeAI Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ad Container (for demonstration) -->
+    <div class="ad-container" id="sidebar-ad">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+        </div>
+    </div>
+
+    <!-- Answer Modal -->
+    <div class="modal" id="answer-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3 id="modal-question-title">Question Title</h3>
+                <div class="modal-controls">
+                    <button id="modal-play-audio" aria-label="Listen to answer">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button id="modal-download" aria-label="Download content">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="modal-answer-content"></div>
+            </div>
+            <div class="modal-footer">
+                <div class="related-questions">
+                    <h4>Related Questions</h4>
+                    <ul id="related-questions-list">
+                        <!-- Related questions will be dynamically loaded here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/voice-assistant.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <!-- Ad Script (for demonstration) -->
+    <script src="js/ad-manager.js"></script>
+</body>
+</html>
